@@ -1,40 +1,60 @@
 <template>
   <div>
+    <div class="menu">
+      <RouterLink to ='/'><p>注文状況を表示する</p></RouterLink>
+    </div>
     <multi-modal-view></multi-modal-view>
-    <div @click="showNormal">
-      <p>ノーマル {{ normal_count }}個</p>
+    <div class="main_container">
+      <div class="boxA">
+        <div @click="showNormal">
+          <p>ノーマル {{ normal_count }}個</p>
+        </div>
+      </div>
+      <div class="boxB">
+        <div @click="showNoodle">
+          <p>麺入り {{ noodle_count }}個</p>
+        </div>
+      </div>
+
+      <div class="boxC">
+        <div @click="showBaconCheese">
+            <p>ベーコンチーズ {{ bacon_cheese_count }}個</p>
+        </div>
+      </div>
+      <div class="boxD">
+        <div @click="showTunaCornMayo">
+          <p>ツナコーンマヨ {{ tuna_corn_mayo_count }}個</p>
+        </div>
+      </div>
+
+      <div class="boxE">
+        <div @click="showNoodleTunaCornMayo">
+            <p>麺入りツナコーンマヨ {{ noodle_tuna_corn_mayo_count }}個</p>
+        </div>
+      </div>
+      <div class="boxF">
+        <div @click="showNoodleTunaCornMayoKetya">
+          <p>麺入りツナコーンマヨ(ケチャップ) {{ noodle_tuna_corn_mayo_ketya_count }}個</p>
+        </div>
+      </div>
+
+      <div class="boxG">
+        <div @click="showZenzai">
+          <p>ぜんざい {{ zenzai_count }}個</p>
+        </div>
+      </div>
+
+      <div class="space">
+      </div>
     </div>
 
-    <div @click="showNoodle">
-      <p>麺入り {{ noodle_count }}個</p>
-    </div>
-
-    <div @click="showBaconCheese">
-        <p>ベーコンチーズ {{ bacon_cheese_count }}個</p>
-    </div>
-
-    <div @click="showTunaCornMayo">
-      <p>ツナコーンマヨ {{ tuna_corn_mayo_count }}個</p>
-    </div>
-
-    <div @click="showNoodleTunaCornMayo">
-        <p>麺入りツナコーンマヨ {{ noodle_tuna_corn_mayo_count }}個</p>
-    </div>
-
-    <div @click="showNoodleTunaCornMayoKetya">
-      <p>麺入りツナコーンマヨ(ケチャップ) {{ noodle_tuna_corn_mayo_ketya_count }}個</p>
-    </div>
-
-    <div @click="showZenzai">
-        <p>ぜんざい {{ zenzai_count }}個</p>
-    </div>
-
-    <div @click="showFinalOrder">
+    <div class="dec" @click="showFinalOrder">
       <p>注文を確定する</p>
     </div>
 
   </div>
 </template>
+
 
 <script>
 import { mapActions,mapMutations,mapState } from 'vuex'
@@ -101,4 +121,135 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+.menu{
+  background-color: gray;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 8px 16px;
+}
+
+a{text-decoration: none;}
+a:link{color: white;}
+a:visited{color: white;}
+a:hover{color: white;}
+a:active{color: white;}
+
+
+.main_container {
+  display: grid;
+  grid-template-rows: 3fr 3fr 3fr 3fr;
+  grid-template-columns: 6fr 6fr;
+  width: 100%;
+  border-radius: 10px;
+  
+}
+
+.boxA{
+ display: inline-block;
+  text-align: left;
+  border: 2px solid #627295;
+  font-size: 16px;
+  color: #627295;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin: 10px;
+}
+
+.boxB{
+ display: inline-block;
+  text-align: left;
+  border: 2px solid #627295;
+  font-size: 16px;
+  color: #627295;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin: 10px;
+}
+
+.boxC{
+ display: inline-block;
+  text-align: left;
+  border: 2px solid #627295;
+  font-size: 16px;
+  color: #627295;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin: 10px;
+}
+
+.boxD{
+ display: inline-block;
+  text-align: left;
+  border: 2px solid #627295;
+  font-size: 16px;
+  color: #627295;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin: 10px;
+
+}
+
+.boxE{
+ display: inline-block;
+  text-align: left;
+  border: 2px solid #627295;
+  font-size: 16px;
+  color: #627295;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin: 10px;
+}
+
+.boxF{
+ display: inline-block;
+  text-align: left;
+  border: 2px solid #627295;
+  font-size: 16px;
+  color: #627295;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin: 10px;
+}
+.boxG{
+
+  display: inline-block;
+  text-align: left;
+  border: 2px solid #627295;
+  font-size: 16px;
+  color: #627295;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin: 10px;
+}
+
+.dec{
+  display: inline-block;
+  text-align: center;
+  border: 2px solid #627200;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin: 10px;
+  background-color: #627295;
+  color: white;
+}
+
+
 </style>
