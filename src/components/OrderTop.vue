@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="header">
+    <div class="menu">
       <RouterLink to ='/'><p>注文状況を表示する</p></RouterLink>
     </div>
     <multi-modal-view></multi-modal-view>
@@ -122,7 +122,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-.header{
+.menu{
   background-color: gray;
   text-align: center;
   font-weight: bold;
@@ -139,8 +139,8 @@ a:active{color: white;}
 
 .main_container {
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 3fr 3fr 3fr 3fr;
+  grid-template-columns: 6fr 6fr;
   width: 100%;
   border-radius: 10px;
   
