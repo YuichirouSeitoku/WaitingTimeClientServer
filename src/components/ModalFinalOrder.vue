@@ -2,13 +2,13 @@
   <transition>
     <div class="modal">
       <p>注文内容に誤りはないですか？</p>
-      <p>ノーマル : {{ normal_count }}</p>
-      <p>麺入り : {{ noodle_count }}</p>
-      <p>ベーコンチーズ : {{ bacon_cheese_count }}</p>
-      <p>ツナコーンマヨ : {{ tuna_corn_mayo_count }}</p>
-      <p>麺入りツナコーンマヨ : {{ noodle_tuna_corn_mayo_count }}</p>
-      <p>麺入りツナコーンマヨ(ケチャップ) : {{ noodle_tuna_corn_mayo_ketya_count }}</p>
-      <p>ぜんざい : {{ zenzai_count }}</p>
+      <p v-if=this.normal_count_show>ノーマル : {{ normal_count }}</p>
+      <p v-if=this.noodle_count_show>麺入り : {{ noodle_count }}</p>
+      <p v-if=this.bacon_cheese_count_show>ベーコンチーズ : {{ bacon_cheese_count }}</p>
+      <p v-if=this.tuna_corn_mayo_count_show>ツナコーンマヨ : {{ tuna_corn_mayo_count }}</p>
+      <p v-if=this.noodle_tuna_corn_mayo_count_show>麺入りツナコーンマヨ : {{ noodle_tuna_corn_mayo_count }}</p>
+      <p v-if=this.noodle_tuna_corn_mayo_ketya_count_show>麺入りツナコーンマヨ(ケチャップ) : {{ noodle_tuna_corn_mayo_ketya_count }}</p>
+      <p v-if=this.zenzai_count_show>ぜんざい : {{ zenzai_count }}</p>
       <button @click="submitOrder">はい</button>
       <button @click="hideModal">戻る</button>
     </div>
@@ -27,11 +27,48 @@ import {mapState, mapMutations, mapActions} from 'vuex'
           bacon_cheese_data:{menu:"bacon_cheese",count:this.$store.state.bacon_cheese_count},
           tuna_corn_mayo_data: {menu:"tuna_corn_mayo",count:this.$store.state.tuna_corn_mayo_count},
 	  noodle_tuna_corn_mayo_data:{menu:"noodle_tuna_corn_mayo",count:this.$store.state.noodle_tuna_corn_mayo_count},
-	  noodle_tuna_corn_mayo_ketya_data:{menu:"noodle_tuna_corn_mayo_ketya",count:this.$store.state.noodle_tuna_corn_mayo_ketya
-        },
-	  zenzai_data:{menu:"zenzai",count:this.$store.state.zenzai}
+	  noodle_tuna_corn_mayo_ketya_data:{menu:"noodle_tuna_corn_mayo_ketya",count:this.$store.state.noodle_tuna_corn_mayo_ketya_count},
+	  zenzai_data:{menu:"zenzai",count:this.$store.state.zenzai},
+          normal_count_show:false,
+          noodle_count_show:false,
+	  bacon_cheese_count_show:false,
+	  tuna_corn_mayo_count_show:false,
+          noodle_tuna_corn_mayo_count_show:false,
+          noodle_tuna_corn_mayo_ketya_count_show:false,
+          zenzai_count_show:false
       }
     },
+    mounted(){
+        if(this.$store.state.normal_count!=0){
+          this.normal_count_show=true
+          this.order_data.push(this.normal_data)
+        }
+        if(this.$store.state.noodle_count!=0){
+	  this.noodle_count_show=true
+          this.order_data.push(this.noodle_data)
+        }
+        if(this.$store.state.bacon_cheese_count!=0){
+	  this.bacon_cheese_count_show=true
+          this.order_data.push(this.bacon_cheese_data)
+        }
+        if(this.$store.state.tuna_corn_mayo_count!=0){
+	  this.tuna_corn_mayo_count_show=true
+          this.order_data.push(this.tuna_corn_mayo_data)
+        }
+        if(this.$store.state.noodle_tuna_corn_mayo_count!=0){
+	  this.noodle_tuna_corn_mayo_count_show=true
+          this.order_data.push(this.noodle_tuna_corn_mayo_data)
+        }
+        if(this.$store.state.noodle_tuna_corn_mayo_ketya_count!=0){
+ 	  this.noodle_tuna_corn_mayo_ketya_count_show=true
+          this.order_data.push(this.noodle_tuna_corn_mayo_ketya_count)
+        }
+        if(this.$store.state.zenzai_count!=0){
+	  this.zenzai_count_show=true
+          this.order_data.push(this.zeznai_data)
+        }
+    },
+
     computed: {
       ...mapState(['isShow']),
       ...mapState(['normal_count']),
@@ -44,28 +81,6 @@ import {mapState, mapMutations, mapActions} from 'vuex'
     },
     methods: {
       submitOrder: function(){
-        if(this.$store.state.normal_count!=0){
-	  this.order_data.push(this.normal_data)
-        }
-        if(this.$store.state.noodle_count!=0){
-          this.order_data.push(this.noodle_data)
-        }
-        if(this.$store.state.bacon_cheese_count!=0){
-          this.order_data.push(this.bacon_cheese_data)
-        }
-        if(this.$store.state.tuna_corn_mayo_count!=0){
-          this.order_data.push(this.tuna_corn_mayo_data)
-        }
-        if(this.$store.state.noodle_tuna_corn_mayo_count!=0){
-          this.order_data.push(this.noodle_tuna_corn_mayo_data)
-        }
-        if(this.$store.state.noodle_tuna_corn_mayo_ketya_data!=0){
-          this.order_data.push(this.noodle_tuna_corn_mayo_ketya_count)
-        }
-        if(this.$store.state.zenzai_count!=0){
-          this.order_data.push(this.zeznai_data)
-        }
-
         this.$axios.post('localhost/api/v1/orders',this.order_data)
       },
       callAction(e) {
