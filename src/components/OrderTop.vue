@@ -143,7 +143,6 @@ a:active{color: white;}
   grid-template-columns: 6fr 6fr;
   width: 100%;
   border-radius: 10px;
-  
 }
 
 .boxA{
@@ -154,9 +153,9 @@ a:active{color: white;}
   color: #627295;
   text-decoration: none;
   font-weight: bold;
-  padding: 8px 16px;
+  padding: 10px 20px;
   border-radius: 4px;
-  margin: 10px;
+  margin: 12px;
 }
 
 .boxB{
@@ -167,9 +166,9 @@ a:active{color: white;}
   color: #627295;
   text-decoration: none;
   font-weight: bold;
-  padding: 8px 16px;
+  padding: 10px 20px;
   border-radius: 4px;
-  margin: 10px;
+  margin: 12px;
 }
 
 .boxC{
@@ -180,9 +179,9 @@ a:active{color: white;}
   color: #627295;
   text-decoration: none;
   font-weight: bold;
-  padding: 8px 16px;
+  padding: 10px 20px;
   border-radius: 4px;
-  margin: 10px;
+  margin: 12px;
 }
 
 .boxD{
@@ -193,9 +192,9 @@ a:active{color: white;}
   color: #627295;
   text-decoration: none;
   font-weight: bold;
-  padding: 8px 16px;
+  padding: 10px 20px;
   border-radius: 4px;
-  margin: 10px;
+  margin: 12px;
 
 }
 
@@ -207,9 +206,9 @@ a:active{color: white;}
   color: #627295;
   text-decoration: none;
   font-weight: bold;
-  padding: 8px 16px;
+  padding: 10px 20px;
   border-radius: 4px;
-  margin: 10px;
+  margin: 12px;
 }
 
 .boxF{
@@ -220,9 +219,9 @@ a:active{color: white;}
   color: #627295;
   text-decoration: none;
   font-weight: bold;
-  padding: 8px 16px;
+  padding: 10px 20px;
   border-radius: 4px;
-  margin: 10px;
+  margin: 12px;
 }
 .boxG{
 
@@ -233,9 +232,9 @@ a:active{color: white;}
   color: #627295;
   text-decoration: none;
   font-weight: bold;
-  padding: 8px 16px;
+  padding: 10px 20px;
   border-radius: 4px;
-  margin: 10px;
+  margin: 12px;
 }
 
 .dec{
@@ -244,9 +243,9 @@ a:active{color: white;}
   border: 2px solid #627200;
   text-decoration: none;
   font-weight: bold;
-  padding: 8px 16px;
+  padding: 10px 20px;
   border-radius: 4px;
-  margin: 10px;
+  margin: 12px;
   background-color: #627295;
   color: white;
 }

@@ -9,8 +9,10 @@
       <p v-if=this.noodle_tuna_corn_mayo_count_show>麺入りツナコーンマヨ : {{ noodle_tuna_corn_mayo_count }}</p>
       <p v-if=this.noodle_tuna_corn_mayo_ketya_count_show>麺入りツナコーンマヨ(ケチャップ) : {{ noodle_tuna_corn_mayo_ketya_count }}</p>
       <p v-if=this.zenzai_count_show>ぜんざい : {{ zenzai_count }}</p>
-      <button @click="submitOrder">はい</button>
-      <button @click="hideModal">戻る</button>
+      <div class="b-container">
+        <div class="boxA" @click="submitOrder">はい</div>
+        <div class="boxB" @click="hideModal">戻る</div>
+      </div>
     </div>
   </transition>
 </template>
@@ -90,3 +92,40 @@ import {mapState, mapMutations, mapActions} from 'vuex'
     }
   }
 </script>
+
+<style scoped>
+.modal{
+  margin: 5px;
+  font-size:16px;
+  color:#627295;
+  font-weight:bold;
+  background-color:#dfdfdf;
+  border-radius:4px;
+}
+
+.b-container{
+  display: grid;
+  grid-template-rows:1fr;
+  grid-template-columns:6fr 6fr;
+}
+
+.boxA{
+  border: solid 2px #627200;
+  border-radius:4px;
+  text-align: center;
+  background-color: #627295;
+  color: white;
+  margin: 5px;
+  padding: 7px;
+}
+
+.boxB{
+  border: solid 2px #627295;
+  border-radius: 4px;
+  text-align: center;
+  margin: 5px;
+  padding: 7px;
+}
+
+
+</style>
