@@ -1,6 +1,7 @@
 <template>
   <div id="container">
      <router-link to="/order">注文画面に飛ぶ</router-link>
+     <button @click="getOrderCurrent">更新</button>
      <div id="todo-list">
        <table>
          <tr>
@@ -32,7 +33,8 @@ export default {
     return {
       todoList: [],
       todoTitle:'',
-      id:1
+      id:1,
+      response_data: ''
     }
   },
   methods: {
@@ -63,6 +65,12 @@ export default {
     changeStatus: function (todo) {
       todo.status = !todo.status;
     },
+    getOrderCurrent: function(){
+      this.$axios
+      .get('localhost/api/v1/orders')
+      .then(responese => (this.response_data = response))
+      console.log(this.responsedata)
+    }
   }
 }
 </script>
