@@ -1,6 +1,8 @@
 <template>
   <div id="container">
-     <router-link to="/order">注文画面に飛ぶ</router-link>
+     <div class="menu">
+     <router-link to="/order"><p>注文画面に飛ぶ</p></router-link>
+     </div> 
      <div id="todo-list">
        <table>
          <tr>
@@ -9,6 +11,9 @@
            </th>
            <th>
 	     <a v-on:click="addTodo()" class="button button-blue" href="#01">追加</a>
+	   </th>
+	   <th>
+	     <div class="reload"><head ><link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"></head><i class="fas fa-redo"></i></div>
 	   </th>
 	 </tr>
 	    <tr v-for="todo in todoList" v-bind:class='{complete: todo.status}'>
@@ -81,14 +86,14 @@ input[type="text"]:focus {
 body {
     background:#bbcae4;
     /*color:#333;*/
-    font-size:85%;
+    font-size: 20px;
     font-family: 'Open Sans', sans-serif;
     /*font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;*/
 }
 
 a {
     text-decoration:none;
-    font-size:85%;
+    font-size:20px;
 }
 
 table{
@@ -114,9 +119,6 @@ td{
     padding:13px;
 }
 
-#container {
-    padding-top: 60px;
-}
 #todo-list {
     max-width:950px;
     background:#FFFFFF;
@@ -195,5 +197,25 @@ td{
 .option-button i {
     margin-right:4px;
 }
+
+.menu{
+  background-color: gray;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 8px 16px;
+  font-size: 20px;
+}
+
+a{text-decoration:none;}
+a:link{color:white;}
+a:visited{color:white;}
+a:hover{color: white;}
+a:active{color: white;}
+
+.reload{
+  text-align: center;
+}
+
 
 </style>
