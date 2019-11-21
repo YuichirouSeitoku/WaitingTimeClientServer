@@ -24,6 +24,7 @@ import {mapState, mapMutations, mapActions} from 'vuex'
     data(){
       return {
           order_data:[],
+		  results:[],
           normal_data:{menu:"normal",count:this.$store.state.normal_count},
           noodle_data:{menu:"noodle",count:this.$store.state.noodle_count},
           bacon_cheese_data:{menu:"bacon_cheese",count:this.$store.state.bacon_cheese_count},
@@ -83,7 +84,10 @@ import {mapState, mapMutations, mapActions} from 'vuex'
     },
     methods: {
       submitOrder: function(){
-        this.$axios.post('localhost/api/v1/orders',this.order_data)
+        this.$axios.post('http://localhost:5000/api/v1/orders',this.order_data)
+		.then(response => {this.results = response[order_id]})
+		console.log("結果を表示します")
+		console.log(this.results)
       },
       callAction(e) {
         this.$store.dispatch('updateNormalCount',{normal_count:e.target.value})
