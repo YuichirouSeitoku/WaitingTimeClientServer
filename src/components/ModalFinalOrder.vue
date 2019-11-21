@@ -96,11 +96,12 @@ import {mapState, mapMutations, mapActions} from 'vuex'
 <style scoped>
 .modal{
   margin: 5px;
-  font-size:16px;
+  font-size:25px;
   color:#627295;
   font-weight:bold;
   background-color:#dfdfdf;
   border-radius:4px;
+  padding: 10px;
 }
 
 .b-container{

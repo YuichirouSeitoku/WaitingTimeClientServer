@@ -5,45 +5,27 @@
     </div>
     <multi-modal-view></multi-modal-view>
     <div class="main_container">
-      <div class="boxA">
-        <div @click="showNormal">
-          <p>ノーマル {{ normal_count }}個</p>
-        </div>
+      <div class="boxA" @click="showNormal">
+        <p>ノーマル {{ normal_count }}個</p>
       </div>
-      <div class="boxB">
-        <div @click="showNoodle">
-          <p>麺入り {{ noodle_count }}個</p>
-        </div>
+      <div class="boxB" @click="showNoodle">
+        <p>麺入り {{ noodle_count }}個</p>
       </div>
-
-      <div class="boxC">
-        <div @click="showBaconCheese">
-            <p>ベーコンチーズ {{ bacon_cheese_count }}個</p>
-        </div>
+      <div class="boxC" @click="showBaconCheese">
+          <p>ベーコンチーズ {{ bacon_cheese_count }}個</p>
       </div>
-      <div class="boxD">
-        <div @click="showTunaCornMayo">
-          <p>ツナコーンマヨ {{ tuna_corn_mayo_count }}個</p>
-        </div>
+      <div class="boxD" @click="showTunaCornMayo">
+        <p>ツナコーンマヨ {{ tuna_corn_mayo_count }}個</p>
       </div>
-
-      <div class="boxE">
-        <div @click="showNoodleTunaCornMayo">
-            <p>麺入りツナコーンマヨ {{ noodle_tuna_corn_mayo_count }}個</p>
-        </div>
+      <div class="boxE" @click="showNoodleTunaCornMayo">
+        <p>麺入りツナコーンマヨ {{ noodle_tuna_corn_mayo_count }}個</p>
       </div>
-      <div class="boxF">
-        <div @click="showNoodleTunaCornMayoKetya">
-          <p>麺入りツナコーンマヨ(ケチャップ) {{ noodle_tuna_corn_mayo_ketya_count }}個</p>
-        </div>
+      <div class="boxF" @click="showNoodleTunaCornMayoKetya">  
+        <p>麺入りツナコーンマヨ(ケチャップ) {{ noodle_tuna_corn_mayo_ketya_count }}個</p>
       </div>
-
-      <div class="boxG">
-        <div @click="showZenzai">
-          <p>ぜんざい {{ zenzai_count }}個</p>
-        </div>
+      <div class="boxG" @click="showZenzai">
+        <p>ぜんざい {{ zenzai_count }}個</p>
       </div>
-
       <div class="space">
       </div>
     </div>
@@ -128,6 +110,7 @@ export default {
   font-weight: bold;
   text-decoration: none;
   padding: 8px 16px;
+  font-size: 20px;
 }
 
 a{text-decoration: none;}
@@ -149,7 +132,7 @@ a:active{color: white;}
  display: inline-block;
   text-align: left;
   border: 2px solid #627295;
-  font-size: 16px;
+  font-size: 20px;
   color: #627295;
   text-decoration: none;
   font-weight: bold;
@@ -162,7 +145,7 @@ a:active{color: white;}
  display: inline-block;
   text-align: left;
   border: 2px solid #627295;
-  font-size: 16px;
+  font-size: 20px;
   color: #627295;
   text-decoration: none;
   font-weight: bold;
@@ -175,7 +158,7 @@ a:active{color: white;}
  display: inline-block;
   text-align: left;
   border: 2px solid #627295;
-  font-size: 16px;
+  font-size: 20px;
   color: #627295;
   text-decoration: none;
   font-weight: bold;
@@ -188,7 +171,7 @@ a:active{color: white;}
  display: inline-block;
   text-align: left;
   border: 2px solid #627295;
-  font-size: 16px;
+  font-size: 20px;
   color: #627295;
   text-decoration: none;
   font-weight: bold;
@@ -202,7 +185,7 @@ a:active{color: white;}
  display: inline-block;
   text-align: left;
   border: 2px solid #627295;
-  font-size: 16px;
+  font-size: 20px;
   color: #627295;
   text-decoration: none;
   font-weight: bold;
@@ -215,7 +198,7 @@ a:active{color: white;}
  display: inline-block;
   text-align: left;
   border: 2px solid #627295;
-  font-size: 16px;
+  font-size: 20px;
   color: #627295;
   text-decoration: none;
   font-weight: bold;
@@ -228,7 +211,7 @@ a:active{color: white;}
   display: inline-block;
   text-align: left;
   border: 2px solid #627295;
-  font-size: 16px;
+  font-size: 20px;
   color: #627295;
   text-decoration: none;
   font-weight: bold;
@@ -243,6 +226,7 @@ a:active{color: white;}
   border: 2px solid #627200;
   text-decoration: none;
   font-weight: bold;
+  font-size: 20px;
   padding: 10px 20px;
   border-radius: 4px;
   margin: 12px;
