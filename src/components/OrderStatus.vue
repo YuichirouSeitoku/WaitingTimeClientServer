@@ -18,8 +18,8 @@
 		<td>{{ order.menu }}</td>
 		<td>{{ order.count }}</td>
 		<td>{{ order.state }}</td>
-		<!--td class="text-right"><a v-on:click="changeStatus(todo)" class="button button-purple" href="#01">{{ todo.status | statusLabel}}</a></td-->
-		<td><a v-on:click="deleteTodo(todo.id)" class="button button-pink" href="#01"><i class="fa fa-close" aria-hidden="true"></i></a></td>
+		<td class="text-right"><a v-on:click="changeStatus(order)" class="button button-purple" href="#01"><!--{{ order.status | statusLabel}}--></a></td>
+		<td><a v-on:click="deleteTodo(order.id)" class="button button-pink" href="#01"><i class="fa fa-close" aria-hidden="true"></i></a></td>
 	    </tr>
 	</table>
     </div>
