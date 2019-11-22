@@ -6,21 +6,19 @@
      <div id="todo-list">
        <table>
          <tr>
-           <th id="todo-form" colspan="4">
-             <input v-model="todoTitle" type="text" placeholder="タスクを追加してください">
-           </th>
-           <th>
-	     <a v-on:click="addTodo()" class="button button-blue" href="#01">追加</a>
-	   </th>
-	   <th>
-	     <div class="reload"><head ><link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"></head><i class="fas fa-redo"></i></div>
-	   </th>
-	 </tr>
-	    <tr v-for="todo in todoList" v-bind:class='{complete: todo.status}'>
-		<td>{{ todo.id }}</td>
-		<td>{{ todo.date }}</td>
-		<td>{{ todo.todo }}</td>
-		<td class="text-right"><a v-on:click="changeStatus(todo)" class="button button-purple" href="#01">{{ todo.status | statusLabel}}</a></td>
+	       <th>	
+		      <div @click=GetOrderCurrent>
+	            <div class="reload"><head ><link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"></head><i class="fas fa-redo"></i></div>
+		      </div>
+	       </th>
+	      </tr>
+	    <tr v-for="order in orderList" v-bind:class='{complete: order.status}'>
+		<td>{{ order.id }}</td>
+		<td>{{ order.order_id }}</td>
+		<td>{{ order.menu }}</td>
+		<td>{{ order.count }}</td>
+		<td>{{ order.state }}</td>
+		<!--td class="text-right"><a v-on:click="changeStatus(todo)" class="button button-purple" href="#01">{{ todo.status | statusLabel}}</a></td-->
 		<td><a v-on:click="deleteTodo(todo.id)" class="button button-pink" href="#01"><i class="fa fa-close" aria-hidden="true"></i></a></td>
 	    </tr>
 	</table>
@@ -33,11 +31,12 @@ import { mapActions,mapMutations,mapState } from 'vuex'
 
 export default {
   name: 'OrderTop',
-  data: ()=> {
+  data() {
     return {
-      todoList: [],
+      orderList: [],
       todoTitle:'',
-      id:1
+      id:1,
+	  todoList: []
     }
   },
   methods: {
@@ -47,15 +46,15 @@ export default {
 	  date.getDate() + ' ' + date.getHours() + ':' + 
 	  date.getMinutes() + ':' + date.getSeconds(); 
     },
-    addTodo :function () {
-      this.todoList.push({
-      id: this.id,
-      date: this.getCurrentDate(),
-      todo: this.todoTitle,
-      status: false
+    addTodo :function () {/*
+      this.orderList.push({
+      id: this.current_data.[i].id,
+	  order_id: this.current_data[i].order_id
+      menu: this.current_data.[i].menu,
+	  count: this.current_data[i].count,
+      state: this.current_data.[i].state
       });
-      this.id++;
-      this.todoTitle="";
+      this.todoTitle="";*/
     },
     deleteTodo :function (todoId) {
       var todoList = this.todoList;
@@ -68,6 +67,10 @@ export default {
     changeStatus: function (todo) {
       todo.status = !todo.status;
     },
+	GetOrderCurrent: function(){
+	  this.$axios.get('http://localhost:5000/api/v1/orders')
+	  .then(res => {this.orderList = res.data},this.forceUpdate)
+    }
   }
 }
 </script>
